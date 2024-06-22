@@ -26,6 +26,10 @@ function App() {
       if(counter > 20)
           counter = 20;
       setCounter(counter)
+      setCounter(counter)
+      setCounter(counter)
+      setCounter(counter)
+      setCounter(counter)
    }
   return (
    <>
