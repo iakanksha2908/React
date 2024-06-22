@@ -15,9 +15,11 @@ function App() {
     //window object hai kyuki hum core react me kaam kar rhe hai. JS me compile hogi, aur jaha par bhi ye run 
     // hogi waha window object hoga. But agar ye hi cheez eg. next.js me banaenge to window ka object nai hoga
     // waha hoti hai server side rendering, waha window ka object nai hoga
+
     passwordRef.current?.select()
-    passwordRef.current?.setSelectionRange(0, 3)
+    // passwordRef.current?.setSelectionRange(0, 3)
     window.navigator.clipboard.writeText(pwd)
+    document.getElementById('copy').classList.replace('bg-blue-700', 'bg-green-800')
 
 
 
@@ -33,16 +35,19 @@ function App() {
     for (let i = 1; i <= length; i++) {
       let char = Math.floor(Math.random() * str.length + 1);
       pass += str.charAt(char);
+      console.log(pass);
     }
 
 
-    setPwd(setPwd)
-  }, [length, numberAllowed, charAllowed, pwd])
+    setPwd(pass)
+    document.getElementById('copy').classList.replace('bg-green-800', 'bg-blue-700')
+
+  }, [length, numberAllowed, charAllowed, setPwd])
 
 
 
 
-  useEffect(() => { pwdGenerator() }, [length, numberAllowed, charAllowed, pwdGenerator])
+  useEffect(() => { pwdGenerator() }, [length, numberAllowed, charAllowed, setPwd])
   return (
     <>
 
@@ -51,7 +56,7 @@ function App() {
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
 
           <input type="text" value={pwd} className='outline-none w-full py-1 px-3' placeholder='password' readOnly ref={passwordRef}></input>
-          <button className="outline-non bg-blue-700 text-white px-3 py-0 5 shrink-0" onClick={copyPasswordToClipboard}>copy</button>
+          <button id="copy" className="outline-non bg-blue-700 text-white px-3 py-0 5 shrink-0" onClick={copyPasswordToClipboard}>copy</button>
         </div>
 
         <div className="flex text-sm gap-x-2">
