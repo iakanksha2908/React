@@ -49,7 +49,6 @@ function Header() {
                                     About
                                 </NavLink>
                             </li>
-<<<<<<< HEAD
                             <li>
                                 <NavLink to={"/contact"}
                                     className={(isActive) =>
@@ -61,10 +60,6 @@ function Header() {
                             </li>
                             
                             
-=======
-
-
->>>>>>> d9ec16998952cb2a0f87e9cbf5a0e70c6b524842
                         </ul>
                     </div>
                 </div>
