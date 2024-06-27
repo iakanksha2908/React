@@ -1,5 +1,5 @@
 import React, { Children } from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom'
 import App from './App.jsx'
 import './index.css'
 import { BrowserRouter, RouterProvider, createBrowserRouter } from 'react-router-dom'
@@ -15,23 +15,29 @@ const router = createBrowserRouter(
   {
     path: '/',
     element: <Layout />,
-    children: [
+    Children: [
       {
         path: '',
-        element: <Home/>
+        element: <Home />
       },
       {
         path: 'about',
         element: <About />
-      },
-      {
-        path: 'contact',
-        element: <Contact/>
-      },
-
+      }
     ]
   }
 ])
+
+  // const router = createBrowserRouter([
+  //   {
+  //     path: '/',
+  //     element: <Layout />,
+  //     children: [
+  //       { path: '', element: <Home /> },  // This matches the root path ('/')
+  //       { path: 'about', element: <About /> }  // This matches '/about'
+  //     ]
+  //   }
+  // ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

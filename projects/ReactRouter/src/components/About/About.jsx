@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function About() {
     return (
+<<<<<<< HEAD
         <div className="py-16 bg-white">
             <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
                 <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
@@ -27,6 +28,10 @@ export default function About() {
                     </div>
                 </div>
             </div>
+=======
+        <div>
+            <h1>About</h1>
+>>>>>>> d9ec16998952cb2a0f87e9cbf5a0e70c6b524842
         </div>
     );
 }
